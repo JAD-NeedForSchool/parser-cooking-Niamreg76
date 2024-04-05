@@ -1,4 +1,5 @@
-﻿using DPParser.Operation.Complex;
+﻿using DPParser.Operation;
+using DPParser.Operation.Complex;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,21 @@ namespace DPParser.Interpreter
 {
     class NaryOperationCookingOrder : ICookingOrder
     {
-        NaryOperation[] operations { get; set; }
+        NaryOperation operation { get; set; }
+        ICookingOrder[] subOrders { get; set; }
         void ICookingOrder.Interpret(CookingRecipeOrder context)
         {
-            Console.WriteLine("ça cook");
+            Console.WriteLine($"n-ary operation '{operation.Name}' for '{context.Ingredient.Name}'");
+            foreach (var subOrder in subOrders)
+            {
+                subOrder.Interpret(context);
+            }
         }
 
-        public NaryOperationCookingOrder(NaryOperation[] operations)
+        public NaryOperationCookingOrder(NaryOperation operation, ICookingOrder[] subOrders)
         {
-            this.operations = operations;
+            this.operation = operation;
+            this.subOrders = subOrders;
         }
     }
 }

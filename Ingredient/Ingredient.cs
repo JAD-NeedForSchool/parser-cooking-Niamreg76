@@ -8,7 +8,7 @@ namespace DPParser.Ingredient
 {
     class Ingredient
     {
-        string Name {  get; set; }
+        public string Name {  get; set; }
 
         public Ingredient(string name)
         {

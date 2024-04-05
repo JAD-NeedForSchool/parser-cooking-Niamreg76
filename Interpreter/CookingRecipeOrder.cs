@@ -8,11 +8,11 @@ namespace DPParser.Interpreter
 {
     class CookingRecipeOrder
     {
-        DPParser.Ingredient.Ingredient ingredient { get; set; }
+        public DPParser.Ingredient.Ingredient Ingredient { get; set; }
 
         public CookingRecipeOrder(DPParser.Ingredient.Ingredient ingredient)
         {
-            this.ingredient = ingredient;
+            this.Ingredient = ingredient;
         }
     }
 }

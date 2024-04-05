@@ -12,3 +12,4 @@ D:\BAC+4\DP ALGO\DPParser\DPParser\obj\Debug\net8.0\refint\DPParser.dll
 D:\BAC+4\DP ALGO\DPParser\DPParser\obj\Debug\net8.0\DPParser.pdb
 D:\BAC+4\DP ALGO\DPParser\DPParser\obj\Debug\net8.0\DPParser.genruntimeconfig.cache
 D:\BAC+4\DP ALGO\DPParser\DPParser\obj\Debug\net8.0\ref\DPParser.dll
+D:\BAC+4\DP ALGO\DPParser\DPParser\obj\Debug\net8.0\DPParser.sourcelink.json

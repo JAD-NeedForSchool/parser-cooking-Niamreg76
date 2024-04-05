@@ -8,7 +8,7 @@ namespace DPParser.Operation
 {
     class Operation
     {
-        string Name { get; set; }
+        public string Name { get; set; }
 
         public Operation(string name)
         {

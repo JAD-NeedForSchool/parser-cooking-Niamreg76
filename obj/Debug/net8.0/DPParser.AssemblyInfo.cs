@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DPParser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7143481d306c0bc32bad98bc985146e35a0617c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df180b46efc26cc32b16e6e1c3affa2bb019494f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DPParser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DPParser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

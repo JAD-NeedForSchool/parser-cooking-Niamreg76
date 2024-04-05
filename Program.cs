@@ -1,25 +1,38 @@
-﻿// Création d'ingrédients
+﻿
 using DPParser.Ingredient.Basic;
 using DPParser.Ingredient;
 using DPParser.Interpreter;
 using DPParser.Operation.Simple;
 using DPParser.Operation;
+using DPParser.Operation.Complex;
 
 Ingredient egg = new Egg();
-Ingredient salad = new Salad();
 
-SimpleOperation cutOperation = new Cut();
-SimpleOperation chopOperation = new Chop();
+// Création des recettes
+CookingOrder TakeYellow = new CookingOrder(
+    new SimpleOperationCookingOrder(new SimpleOperation("Prendre jaune")),
+    new IngredientCookingOrder(new BasicIngredient("Oeuf"))
+);
 
-CookingRecipeOrder recipeOrder1 = new CookingRecipeOrder(egg);
-CookingRecipeOrder recipeOrder2 = new CookingRecipeOrder(salad);
+CookingOrder Mix = new CookingOrder(
+    new NaryOperationCookingOrder(new NaryOperation("Mélanger"), new ICookingOrder[] {
+                    TakeYellow,
+                    new IngredientCookingOrder(new BasicIngredient("Moutarde")),
+                    new IngredientCookingOrder(new BasicIngredient("Vinaigre"))
+    })
+);
 
-ICookingOrder order1 = new SimpleOperationCookingOrder(cutOperation);
-ICookingOrder order2 = new SimpleOperationCookingOrder(chopOperation);
-ICookingOrder order3 = new IngredientCookingOrder(egg);
-ICookingOrder order4 = new IngredientCookingOrder(salad);
+CookingOrder Add = new CookingOrder(
+    new NaryOperationCookingOrder(new NaryOperation("Ajouter"), new ICookingOrder[] {
+                    Mix,
+                    new IngredientCookingOrder(new BasicIngredient("Huile"))
+    })
+);
 
-order1.Interpret(recipeOrder1);
-order2.Interpret(recipeOrder2);
-order3.Interpret(recipeOrder1);
-order4.Interpret(recipeOrder2);
+CookingOrder Mayonnaise = new CookingOrder(
+    new SimpleOperationCookingOrder(new SimpleOperation("Touiller")),
+    Add
+);
+
+Console.WriteLine("ça cook :");
+Mayonnaise.Interpret(new CookingRecipeOrder(egg));

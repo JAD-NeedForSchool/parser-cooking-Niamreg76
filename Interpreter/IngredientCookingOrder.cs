@@ -11,7 +11,7 @@ namespace DPParser.Interpreter
         DPParser.Ingredient.Ingredient ingredient { get; set; }
         public void Interpret(CookingRecipeOrder context)
         {
-            Console.WriteLine("ça cook");
+            Console.WriteLine($"Ajout de l'ingredient {ingredient.Name} à la recette");
         }
 
         public IngredientCookingOrder(DPParser.Ingredient.Ingredient ingredient)

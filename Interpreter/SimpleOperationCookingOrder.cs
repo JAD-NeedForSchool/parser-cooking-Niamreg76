@@ -13,7 +13,7 @@ namespace DPParser.Interpreter
 
         void ICookingOrder.Interpret(CookingRecipeOrder context)
         {
-            Console.WriteLine("ça cook");
+            Console.WriteLine($"Simple operation '{operation.Name}' pour '{context.Ingredient.Name}'  ");
         }
 
         public SimpleOperationCookingOrder(SimpleOperation operation)
