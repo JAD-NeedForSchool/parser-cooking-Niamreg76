@@ -8,6 +8,7 @@ using DPParser.Operation.Complex;
 
 Ingredient egg = new Egg();
 
+
 // Création des recettes
 CookingOrder TakeYellow = new CookingOrder(
     new SimpleOperationCookingOrder(new SimpleOperation("Prendre jaune")),
@@ -34,5 +35,8 @@ CookingOrder Mayonnaise = new CookingOrder(
     Add
 );
 
+CookingRecipeOrder MayonnaiseR = new CookingRecipeOrder(egg);
 Console.WriteLine("ça cook :");
-Mayonnaise.Interpret(new CookingRecipeOrder(egg));
+Mayonnaise.Interpret(MayonnaiseR);
+
+Console.WriteLine(MayonnaiseR.Ingredient.Name);
